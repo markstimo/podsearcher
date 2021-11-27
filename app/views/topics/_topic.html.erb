@@ -1,0 +1,16 @@
+	<p>
+		<strong> Topic: </strong>
+		<%= topic.name %>
+	</p>
+	<p>
+		<strong> TimeCode: </strong>
+		<%= topic.timecode %>
+	</p>
+	<p>
+		<strong> Description: </strong>
+		<%= topic.description %>
+	</p>
+	<p><%= link_to 'Destroy This Topic' , [topic.episode, topic], 
+					method: :delete,
+					data: { confirm: "are you sure?" } %>
+	</p>	
