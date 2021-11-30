@@ -1,20 +1,27 @@
+<%= stylesheet_link_tag "itmstyles" %>
 <%= form_with model: episode do |form| %>
-  <div>
-    <%= form.label :podcast_title %><br>
-    <%= form.text_field :podcast_title %>
-    <% episode.errors.full_messages_for(:podcast_title).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
+  <div class="grid-container">
+    <div class="grid-child">
+      <%= label_tag :new_podcast_title, "Enter New Podcast Title"%>
+      <%= text_field_tag :new_podcast_title %>
+    </div>
+    <div class="grid-child">
+      <%= form.label :podcast_title, "Or Select Existing" %><br>
+      <%= select_tag( :podcast_title, options_for_select(@podcast_titles, selected: episode.podcast_title) ) %>
+      <% episode.errors.full_messages_for(:podcast_title).each do |message| %>
+        <div><%= message %></div>
+      <% end %>
+    </div>
   </div>
   <div>
-    <%= form.label :title %><br>
+    <%= form.label :title, "Episode Title"%><br>
     <%= form.text_field :title %>
     <% episode.errors.full_messages_for(:title).each do |message| %>
       <div><%= message %></div>
     <% end %>
   </div>
   <div>
-    <%= form.label :episode_date %>
+    <%= form.label :episode_date, "Episode Date"%><br>
     <%= form.date_field :episode_date %>
     <% episode.errors.full_messages_for(:episode_date).each do |message| %>
       <div><%= message %></div>
@@ -22,13 +29,14 @@
   </div>
   <div>
     <%= form.label :number %><br>
-    <%= form.text_area :number %><br>
+    <%= form.text_field :number %><br>
     <% episode.errors.full_messages_for(:number).each do |message| %>
       <div><%= message %></div>
     <% end %>
   </div>
 
   <div>
+    <br>
     <%= form.submit %>
   </div>
 <% end %>
