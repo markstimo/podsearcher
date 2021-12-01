@@ -1,3 +1,30 @@
+html {
+
+    background: url(matt-botsford-OKLqGsCT8qs-unsplash.jpg) no-repeat center center fixed;
+    background-size: cover;
+}
+h1{
+    color:wheat;
+}
+h2{
+    color:wheat;
+}
+ul {
+    list-style: none;
+}
+a {
+    color:silver;
+}
+input,textarea,select {
+    opacity: 0.2;
+}
+input[type=submit]{
+    opacity: .6;
+}
+div,label,p { 
+    color: white;
+}
+
 .grid-container {
     display: grid;
     grid-template-columns: 175px 175px;
